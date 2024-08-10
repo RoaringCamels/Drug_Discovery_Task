@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network Analysis</title>
+    <title>Flow Betweenness Test</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Upload Network Data</h1>
+    <h1>Flow Betweenness Calculation Test</h1>
     <form id="upload-form" enctype="multipart/form-data">
         <input type="file" id="file" name="file" accept=".csv" required>
         <label for="source">Source Node:</label>
@@ -17,11 +17,11 @@
         <button type="submit">Upload and Compute</button>
     </form>
 
-    <h2 id="csv-header" class="hidden">CSV Data</h2>
-    <div id="csv-data" class="hidden"></div>
-    
     <h2 id="results-header" class="hidden">Results</h2>
     <div id="results" class="hidden"></div>
+
+    <h2 id="csv-header" class="hidden">CSV Data</h2>
+    <div id="csv-data" class="hidden"></div>
     
     <h2 id="matrices-header" class="hidden">Matrices</h2>
     <div id="matrices" class="hidden"></div>
