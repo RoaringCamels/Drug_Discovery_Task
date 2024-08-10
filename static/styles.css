@@ -1,39 +1,102 @@
-/* Style for matrices table */
-table {
-    border-collapse: collapse;
-    margin: 10px 0;
-    width: 100%;
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+h1, h2, h3, h4 {
+    color: #0056b3;
+    margin: 20px 0;
+}
+
+h1 {
     text-align: center;
 }
 
-th {
-    background-color: #f2f2f2;
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-pre {
-    white-space: pre-wrap; /* To wrap long lines */
-    word-wrap: break-word; /* To break long words */
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
 }
+
+form input[type="number"],
+form input[type="file"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+form button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
 .hidden {
     display: none;
 }
 
+#csv-data, #results, #matrices {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap; /* Keeps whitespace formatting */
+}
+
+#csv-data {
+    font-family: monospace;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+#results {
+    font-family: monospace;
+    background-color: #e9ecef;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+#matrices h4 {
+    margin-top: 0;
+}
+
 .matrix-table {
-    border-collapse: collapse;
     width: 100%;
-    margin: 20px 0; /* Adds spacing around the table */
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
 .matrix-table td {
     border: 1px solid #ddd;
-    padding: 4px; /* Reduces padding to make cells smaller */
+    padding: 8px;
     text-align: center;
-    font-size: 12px; /* Reduces font size for smaller text */
 }
 
 .matrix-table tr:nth-child(even) {
@@ -41,12 +104,12 @@ pre {
 }
 
 .matrix-table tr:hover {
-    background-color: #ddd;
+    background-color: #d6e1e5;
 }
 
-/* Optional: Adjust the width of the tables */
-.matrix-table {
-    max-width: 800px; /* Limits the width of the table */
-    margin: 0 auto; /* Centers the table horizontally */
+@media (max-width: 768px) {
+    form input[type="number"],
+    form input[type="file"] {
+        width: calc(100% - 20px);
+    }
 }
-
