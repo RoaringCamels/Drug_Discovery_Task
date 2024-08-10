@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Upload Network Data</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" id="file" name="file" accept=".csv" required>
+        <label for="source">Source Node:</label>
+        <input type="number" id="source" name="source" min="0" required>
+        <label for="sink">Sink Node:</label>
+        <input type="number" id="sink" name="sink" min="0" required>
+        <button type="submit">Upload and Compute</button>
+    </form>
+
+    <h2>CSV Data</h2>
+    <div id="csv-data" class="hidden"></div>
+    
+    <h2>Results</h2>
+    <div id="results" class="hidden"></div>
+    
+    <h3>Matrices</h3>
+    <div id="matrices" class="hidden"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

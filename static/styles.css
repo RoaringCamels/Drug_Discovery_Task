@@ -1,0 +1,18 @@
+/* Style for matrices table */
+table {
+    border-collapse: collapse;
+    margin: 10px 0;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+pre {
+    white-space: pre-wrap; /* To wrap long lines */
+    word-wrap: break-word; /* To break long words */
+}
