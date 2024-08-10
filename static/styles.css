@@ -4,15 +4,49 @@ table {
     margin: 10px 0;
     width: 100%;
 }
+
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
+
 th {
     background-color: #f2f2f2;
 }
+
 pre {
     white-space: pre-wrap; /* To wrap long lines */
     word-wrap: break-word; /* To break long words */
 }
+.hidden {
+    display: none;
+}
+
+.matrix-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0; /* Adds spacing around the table */
+}
+
+.matrix-table td {
+    border: 1px solid #ddd;
+    padding: 4px; /* Reduces padding to make cells smaller */
+    text-align: center;
+    font-size: 12px; /* Reduces font size for smaller text */
+}
+
+.matrix-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.matrix-table tr:hover {
+    background-color: #ddd;
+}
+
+/* Optional: Adjust the width of the tables */
+.matrix-table {
+    max-width: 800px; /* Limits the width of the table */
+    margin: 0 auto; /* Centers the table horizontally */
+}
+

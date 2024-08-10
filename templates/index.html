@@ -17,13 +17,13 @@
         <button type="submit">Upload and Compute</button>
     </form>
 
-    <h2>CSV Data</h2>
+    <h2 id="csv-header" class="hidden">CSV Data</h2>
     <div id="csv-data" class="hidden"></div>
     
-    <h2>Results</h2>
+    <h2 id="results-header" class="hidden">Results</h2>
     <div id="results" class="hidden"></div>
     
-    <h3>Matrices</h3>
+    <h2 id="matrices-header" class="hidden">Matrices</h2>
     <div id="matrices" class="hidden"></div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
