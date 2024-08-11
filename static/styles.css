@@ -1,11 +1,27 @@
-/* styles.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 80%;
+    width: 100%;
+}
+
+#content-wrapper {
+    transform: scale(1.2); /* Adjust scale factor */
+    transform-origin: top left; /* Scale from top-left */
+    width: calc(100% / 1.2); /* Adjust width to fit the scaled content */
+    height: calc(100% / 1.2); /* Adjust height to fit the scaled content */
+}
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     color: #333;
     margin: 0;
-    padding: 6px;
+    padding: 12px;
+    background: linear-gradient(180deg, #e0f7fa 0%, #ffffff 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    transition: background 0.5s ease;
+    position: relative; /* Allows positioning of floating shapes */
 }
 
 h1, h2, h3, h4 {
@@ -24,6 +40,8 @@ form {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensures form stays above the shapes */
+    z-index: 10; /* Higher z-index to keep it above shapes */
 }
 
 form label {
@@ -67,6 +85,8 @@ form button:hover {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     white-space: pre-wrap; /* Keeps whitespace formatting */
+    position: relative; /* Ensures sections stay above the shapes */
+    z-index: 10; /* Higher z-index to keep it above shapes */
 }
 
 #csv-data {
@@ -107,9 +127,136 @@ form button:hover {
     background-color: #d6e1e5;
 }
 
-@media (max-width: 768px) {
-    form input[type="number"],
-    form input[type="file"] {
-        width: calc(100% - 20px);
+#floating-circle1 {
+    position: absolute;
+    width: 100px; /* Circle diameter */
+    height: 100px; /* Circle diameter */
+    background-color: rgba(0, 123, 255, 0.6); /* Semi-transparent blue */
+    border-radius: 50%; /* Makes it a circle */
+    bottom: 0; /* Position at the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    animation: float1 10s infinite linear; /* Animation properties */
+}
+
+#floating-circle2 {
+    position: absolute;
+    width: 60px; /* Circle diameter */
+    height: 60px; /* Circle diameter */
+    background-color: rgba(0, 255, 64, 0.6); /* Semi-transparent blue */
+    border-radius: 50%; /* Makes it a circle */
+    bottom: 50%; /* Position at the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    animation: float2 10s infinite linear; /* Animation properties */
+}
+
+#floating-circle3 {
+    position: absolute;
+    width: 80px; /* Circle diameter */
+    height: 80px; /* Circle diameter */
+    background-color: rgba(255, 0, 0, 0.6); /* Semi-transparent red */
+    border-radius: 50%; /* Makes it a circle */
+    bottom: 40%; /* Position 40% from the bottom */
+    left: 90%; /* 70% from the left */
+    transform: translateX(-50%); /* Center horizontally */
+    animation: float3 8s infinite linear; /* Different animation duration */
+}
+
+#floating-circle4 {
+    position: absolute;
+    width: 120px; /* Circle diameter */
+    height: 120px; /* Circle diameter */
+    background-color: rgba(255, 255, 0, 0.6); /* Semi-transparent yellow */
+    border-radius: 50%; /* Makes it a circle */
+    bottom: 60%; /* Position 10% from the bottom */
+    left: 10%; /* 10% from the left */
+    transform: translateX(-50%); /* Center horizontally */
+    animation: float4 14s infinite linear; /* Different animation duration */
+}
+
+#floating-circle5 {
+    position: absolute;
+    width: 70px; /* Circle diameter */
+    height: 70px; /* Circle diameter */
+    background-color: rgba(255, 105, 180, 0.6); /* Semi-transparent pink */
+    border-radius: 50%; /* Makes it a circle */
+    bottom: 80%; /* Position 30% from the bottom */
+    left: 80%; /* 80% from the left */
+    transform: translateX(-50%); /* Center horizontally */
+    animation: float2 11s infinite ease-in-out; /* Different animation duration and path */
+}
+
+#floating-circle6 {
+    position: absolute;
+    width: 90px; /* Circle diameter */
+    height: 90px; /* Circle diameter */
+    background-color: rgba(255, 165, 0, 0.6); /* Semi-transparent orange */
+    border-radius: 50%; /* Makes it a circle */
+    bottom: 25%; /* Position 25% from the bottom */
+    left: 20%; /* 20% from the left */
+    transform: translateX(-50%); /* Center horizontally */
+    animation: float3 13s infinite ease-in-out; /* Different animation duration and path */
+}
+
+#floating-circle7 {
+    position: absolute;
+    width: 110px; /* Circle diameter */
+    height: 110px; /* Circle diameter */
+    background-color: rgba(128, 0, 128, 0.6); /* Semi-transparent purple */
+    border-radius: 50%; /* Makes it a circle */
+    bottom: 50%; /* Position 50% from the bottom */
+    left: 40%; /* 40% from the left */
+    transform: translateX(-50%); /* Center horizontally */
+    animation: float1 16s infinite ease-in-out; /* Different animation duration and path */
+}
+
+/* Floating animation keyframes */
+@keyframes float1 {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-80px) translateX(50px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
     }
 }
+
+@keyframes float2 {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-60px) translateX(-40px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes float3 {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-100px) translateX(-60px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes float4 {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-120px) translateX(70px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+

@@ -30,11 +30,6 @@ document.getElementById('upload-form').addEventListener('submit', function(event
             document.getElementById('results').innerText = `Flow Betweenness: ${data.flow_betweenness}`;
             document.getElementById('results').classList.remove('hidden');
 
-            // Display matrices
-            const formatMatrix = (matrix) => {
-                return matrix.map(row => row.join('\t')).join('\n');
-            };
-
             // Function to convert a matrix to an HTML table
             const formatMatrixToTable = (matrix) => {
                 return `
