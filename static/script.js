@@ -11,10 +11,19 @@ document.getElementById('upload-form').addEventListener('submit', function(event
     })
     .then(response => response.json())
     .then(data => {
+        // Hide previous results and matrices
+        document.getElementById('csv-data').classList.add('hidden');
+        document.getElementById('results').classList.add('hidden');
+        document.getElementById('matrices').classList.add('hidden');
+
         if (data.error) {
-            document.getElementById('results').innerText = `Error: ${data.error}`;
-            document.getElementById('results-header').classList.remove('hidden');
+            // Display error message
+            document.getElementById('error-message').innerText = `Error: ${data.error}`;
+            document.getElementById('error-message').classList.remove('hidden');
         } else {
+            // Hide error message if present
+            document.getElementById('error-message').classList.add('hidden');
+
             // Display headers and sections
             document.getElementById('csv-header').classList.remove('hidden');
             document.getElementById('results-header').classList.remove('hidden');
@@ -27,7 +36,9 @@ document.getElementById('upload-form').addEventListener('submit', function(event
             }
 
             // Display results
-            document.getElementById('results').innerText = `Flow Betweenness: ${data.flow_betweenness}`;
+            document.getElementById('results').innerText = `Source Node: ${data.source}\n` + 
+                `Sink Node: ${data.sink}\n` +
+                `Flow Betweenness: ${data.flow_betweenness}`;
             document.getElementById('results').classList.remove('hidden');
 
             // Function to convert a matrix to an HTML table
@@ -60,9 +71,17 @@ document.getElementById('upload-form').addEventListener('submit', function(event
                 ${lapInvMatrix}
             `;
             document.getElementById('matrices').classList.remove('hidden');
-                    }
+        }
     })
     .catch(error => {
         console.error('Error:', error);
+        // Hide all results and matrices
+        document.getElementById('csv-data').classList.add('hidden');
+        document.getElementById('results').classList.add('hidden');
+        document.getElementById('matrices').classList.add('hidden');
+        
+        // Display generic error message
+        document.getElementById('error-message').innerText = '.csv requires 3 columns';
+        document.getElementById('error-message').classList.remove('hidden');
     });
 });

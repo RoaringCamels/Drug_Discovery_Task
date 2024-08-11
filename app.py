@@ -33,6 +33,8 @@ def upload():
     b_v_u = compute_flow_betweenness(tempAdjDense, tempLinv, source, sink)
     
     result = {
+        'source': source,
+        'sink': sink,
         'tempAdj': {
             'data': tempAdj.data.tolist(),
             'row': tempAdj.row.tolist(),
